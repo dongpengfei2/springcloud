@@ -1,0 +1,461 @@
+[{
+		"id": 324,
+		"name": "核心数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "core.data",
+		"checked": false,
+		"nodes": [{
+				"id": 885,
+				"name": "数据汇总[日][活跃]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.data.summary",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 376,
+				"name": "收入汇总[日][活跃]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "dailyreport.pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 773,
+		"name": "行为数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "action.data",
+		"checked": false,
+		"nodes": [{
+				"id": 774,
+				"name": "注册行为[日][注册]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "register_action",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 4349,
+				"name": "活跃行为[日][活跃]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "daily_actions",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 1504,
+		"name": "运营数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "operation.data",
+		"checked": false,
+		"nodes": [{
+				"id": 3124,
+				"name": "数据汇总[周三][活跃]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "huizong",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 3081,
+				"name": "留存数据[周三][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.retention",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12169,
+		"name": "客服系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/customerService/view",
+		"pageType": 3,
+		"uuidName": "customer.service",
+		"checked": false,
+		"nodes": [{
+				"id": 16475,
+				"name": "玩家信息[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.user.message",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16748,
+				"name": "人物基本信息[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.character.basic.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12537,
+		"name": "运营系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "old.operation.system",
+		"checked": false,
+		"nodes": [{
+				"id": 12558,
+				"name": "集体邮件v2",
+				"parentId": 12537,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=operatingService&act_new=groupmailv2",
+				"pageType": 5,
+				"uuidName": "old.operate.collective.mail.v2",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12580,
+				"name": "批量扣除",
+				"parentId": 12537,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=operatingService&act_new=groupdeduct",
+				"pageType": 5,
+				"uuidName": "old.operational.bulk.deduction",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12606,
+		"name": "自定义数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "old.custom.data",
+		"checked": false,
+		"nodes": [{
+				"id": 12607,
+				"name": "数据显示",
+				"parentId": 12606,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=customData&act_new=taskdisplay",
+				"pageType": 5,
+				"uuidName": "old.custom.data.display",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12608,
+				"name": "新建task",
+				"parentId": 12606,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=customData&act_new=buildtask",
+				"pageType": 5,
+				"uuidName": "old.custom.new.task",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12609,
+				"name": "task列表",
+				"parentId": 12606,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=customData&act_new=tasklist",
+				"pageType": 5,
+				"uuidName": "old.custom.task.list",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12582,
+		"name": "监控系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "old.monitoring.system",
+		"checked": false,
+		"nodes": [{
+				"id": 12583,
+				"name": "服务端错误",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://moba-gm.super-chameleon.com/GMTool/tools/errorAnalysis/errorAnalysis_for_lost.php",
+				"pageType": 6,
+				"uuidName": "old.monitoring.server.error",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12587,
+				"name": "服务端性能",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=monitor&act_new=ServerPerformance",
+				"pageType": 5,
+				"uuidName": "old.monitoring.server-side.performance",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12591,
+				"name": "客户端异常下载",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=monitor&act_new=ClientFailDownload",
+				"pageType": 5,
+				"uuidName": "old.monitoring.client.abnormal.download",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20719,
+				"name": "客户端帧率",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "client.frame",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20720,
+				"name": "网络延迟",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "webdelay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16206,
+				"name": "自助SQL",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customize/selfservicesql",
+				"pageType": 7,
+				"uuidName": "new.selfservice.sql",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 16799,
+		"name": "[体验服]客服系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/customerService/view",
+		"pageType": 3,
+		"uuidName": "experience.serving",
+		"checked": false,
+		"nodes": [{
+				"id": 16264,
+				"name": "发送邮件(带道具)",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "experienceServing.send.mail",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16800,
+				"name": "人物基本信息(查询)",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "character.basic.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16801,
+				"name": "个人邮件信息",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "personal.email.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16802,
+				"name": "人物等级修改",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "character.level.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16803,
+				"name": "主线任务修改",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "mainline.task.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16804,
+				"name": "货币修改",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "currency.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16805,
+				"name": "账号绑定",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "account.binding",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	}
+]

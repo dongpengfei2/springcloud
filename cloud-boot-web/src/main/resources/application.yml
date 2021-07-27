@@ -1,0 +1,11 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+  servlet:
+    session:
+      timeout: 28800
+  maxHttpHeaderSize: 1024000
+  compression:
+    enabled: true
+    mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain

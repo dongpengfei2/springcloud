@@ -1,0 +1,1280 @@
+[{
+		"id": 324,
+		"name": "核心数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "core.data",
+		"checked": false,
+		"nodes": [{
+				"id": 885,
+				"name": "数据汇总[日][活跃]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.data.summary",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 376,
+				"name": "收入汇总[日][活跃]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "dailyreport.pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 506,
+				"name": "留存数据[日][注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.retention",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 19790,
+				"name": "留存数据[puid][注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "retention.puid",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 575,
+				"name": "商业价值[日][注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.commercial",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 2712,
+				"name": "商业价值[周][注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "commercial.value.week",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 2153,
+				"name": "商业价值[月][注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "commercial.value.month",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 627,
+				"name": "在线时长[日][注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.online.time",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 9707,
+				"name": "新手通过率[注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "novice.pass.rate",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16980,
+				"name": "新手通过率[激活]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "novice.pass.rate2",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 13399,
+				"name": "任务通过率[注册]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "usertask.pass.rate",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 17544,
+				"name": "版本分布[活跃]",
+				"parentId": 324,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "active.user.version.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 773,
+		"name": "行为数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "action.data",
+		"checked": false,
+		"nodes": [{
+				"id": 774,
+				"name": "注册行为[日][注册]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "register_action",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 4349,
+				"name": "活跃行为[日][活跃]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "daily_actions",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 13379,
+				"name": "资源产出消耗[活跃]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "behavior_resource_output_consumption",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 18385,
+				"name": "道具产出消耗[活跃]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "item_add_remove",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 15770,
+				"name": "资源产出消耗[活跃][备]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "behavior_resource_output_consumption_2",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 17324,
+				"name": "死亡次数分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "distribution.character.deaths",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 17500,
+				"name": "死亡场景分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "death.scene.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 17491,
+				"name": "死亡原因分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "cause.death.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 17509,
+				"name": "人物等级分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "character.hierarchy.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 18844,
+				"name": "制作物品分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "production.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 18854,
+				"name": "建筑生产分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "construction.production.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20678,
+				"name": "建筑等级分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "building.level.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 18845,
+				"name": "Buff种类分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "unit_buff_distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 18863,
+				"name": "主动技能分布",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "active.skill.usage.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20580,
+				"name": "主动技能分布[道具拆分]",
+				"parentId": 773,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "skill_item_distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 1504,
+		"name": "运营数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "operation.data",
+		"checked": false,
+		"nodes": [{
+				"id": 3124,
+				"name": "数据汇总[周三][活跃]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "huizong",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 3081,
+				"name": "留存数据[周三][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.retention",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 3252,
+				"name": "留存数据[月][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "daily.retention",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 2956,
+				"name": "商业价值[周三][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "shangyejiazhi_week",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 13195,
+				"name": "每小时付费[注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "real-time.pay.per.hour",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 3179,
+				"name": "付费档位[日][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "fufeidangwei",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 6112,
+				"name": "付费用户[日][活跃]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "dau.usd.pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 10871,
+				"name": "用户付费[日][活跃]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "activity_user_pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 6272,
+				"name": "用户付费[日][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "register_pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 6969,
+				"name": "首日付费留存[日][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "pay.daily.retention",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 7986,
+				"name": "流失用户付费[日][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "user.lose",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 8467,
+				"name": "大本等级分布[日][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "main.level.distribution",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 9265,
+				"name": "首次付费[日][注册]",
+				"parentId": 1504,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 4,
+				"uuidName": "first.pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12169,
+		"name": "客服系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/customerService/view",
+		"pageType": 3,
+		"uuidName": "customer.service",
+		"checked": false,
+		"nodes": [{
+				"id": 16475,
+				"name": "玩家信息[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.user.message",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16748,
+				"name": "人物基本信息[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.character.basic.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16407,
+				"name": "任务履历[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.history.task.complete",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16408,
+				"name": "死亡履历[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.history.dead",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16406,
+				"name": "付费履历[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.history.pay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16418,
+				"name": "道具使用获得履历[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.history.item.removeOrAdd.history",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16419,
+				"name": "玩家进入场景履历[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.history.playerEnterScene",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16417,
+				"name": "货币产出消耗履历[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.history.currency.out.cost",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16749,
+				"name": "个人邮件信息[查询]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.personal.email.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16614,
+				"name": "玩家等级[修改]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.character.level.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 21033,
+				"name": "玩家性别[修改]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "player-sex-mod",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16747,
+				"name": "玩家货币[修改]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.currency.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20677,
+				"name": "玩家禁言[修改]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "player.banned",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 21097,
+				"name": "玩家封号[修改]",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "player.seal",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16420,
+				"name": "发送邮件(带道具)",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.formalService.send.mail",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16640,
+				"name": "主线任务接受",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.mainline.task.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 17024,
+				"name": "主线任务完成",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "mainline.mission.completed",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16750,
+				"name": "账号绑定",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "customer.account.binding",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 21086,
+				"name": "账号转移",
+				"parentId": 12169,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "account.move",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12537,
+		"name": "运营系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "old.operation.system",
+		"checked": false,
+		"nodes": [{
+				"id": 12558,
+				"name": "集体邮件v2",
+				"parentId": 12537,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=operatingService&act_new=groupmailv2",
+				"pageType": 5,
+				"uuidName": "old.operate.collective.mail.v2",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12580,
+				"name": "批量扣除",
+				"parentId": 12537,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=operatingService&act_new=groupdeduct",
+				"pageType": 5,
+				"uuidName": "old.operational.bulk.deduction",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12606,
+		"name": "自定义数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "old.custom.data",
+		"checked": false,
+		"nodes": [{
+				"id": 12607,
+				"name": "数据显示",
+				"parentId": 12606,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=customData&act_new=taskdisplay",
+				"pageType": 5,
+				"uuidName": "old.custom.data.display",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12608,
+				"name": "新建task",
+				"parentId": 12606,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=customData&act_new=buildtask",
+				"pageType": 5,
+				"uuidName": "old.custom.new.task",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12609,
+				"name": "task列表",
+				"parentId": 12606,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=customData&act_new=tasklist",
+				"pageType": 5,
+				"uuidName": "old.custom.task.list",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 12582,
+		"name": "监控系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "old.monitoring.system",
+		"checked": false,
+		"nodes": [{
+				"id": 12583,
+				"name": "服务端错误",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://moba-gm.super-chameleon.com/GMTool/tools/errorAnalysis/errorAnalysis_for_lost.php",
+				"pageType": 6,
+				"uuidName": "old.monitoring.server.error",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12587,
+				"name": "服务端性能",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=monitor&act_new=ServerPerformance",
+				"pageType": 5,
+				"uuidName": "old.monitoring.server-side.performance",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 12591,
+				"name": "客户端异常下载",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "http://analytics.super-chameleon.com/GMTool/admin_stats/admincp.php?mod_new=monitor&act_new=ClientFailDownload",
+				"pageType": 5,
+				"uuidName": "old.monitoring.client.abnormal.download",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20719,
+				"name": "客户端帧率",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "client.frame",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 20720,
+				"name": "网络延迟",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "webdelay",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16206,
+				"name": "自助SQL",
+				"parentId": 12582,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customize/selfservicesql",
+				"pageType": 7,
+				"uuidName": "new.selfservice.sql",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 16799,
+		"name": "[体验服]客服系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/customerService/view",
+		"pageType": 3,
+		"uuidName": "experience.serving",
+		"checked": false,
+		"nodes": [{
+				"id": 16264,
+				"name": "发送邮件(带道具)",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "experienceServing.send.mail",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16800,
+				"name": "人物基本信息(查询)",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "character.basic.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16801,
+				"name": "个人邮件信息",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "personal.email.information",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16802,
+				"name": "人物等级修改",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "character.level.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16803,
+				"name": "主线任务修改",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "mainline.task.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16804,
+				"name": "货币修改",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "currency.modification",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 16805,
+				"name": "账号绑定",
+				"parentId": 16799,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "account.binding",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 21034,
+		"name": "核心数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "core_data_center",
+		"checked": false,
+		"nodes": [{
+				"id": 21037,
+				"name": "数据汇总[日][活跃]",
+				"parentId": 21034,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "data-summary",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 21223,
+				"name": "数据汇总[test01]",
+				"parentId": 21034,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/custom/view",
+				"pageType": 0,
+				"uuidName": "3",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	},
+	{
+		"id": 21036,
+		"name": "行为数据",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/custom/view",
+		"pageType": 0,
+		"uuidName": "torchlight.action.data",
+		"checked": false,
+		"nodes": [{
+			"id": 21038,
+			"name": "注册行为[日]",
+			"parentId": 21036,
+			"pId": null,
+			"menuLevel": 2,
+			"url": "/custom/view",
+			"pageType": 4,
+			"uuidName": "register_action",
+			"checked": false,
+			"nodes": [
+
+			]
+		}]
+	},
+	{
+		"id": 21035,
+		"name": "客服系统",
+		"parentId": -1,
+		"pId": null,
+		"menuLevel": 1,
+		"url": "/customerService/view",
+		"pageType": 3,
+		"uuidName": "torchlight.customer.system",
+		"checked": false,
+		"nodes": [{
+				"id": 21039,
+				"name": "玩家信息[查询]",
+				"parentId": 21035,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "player_ext_info_query",
+				"checked": false,
+				"nodes": [
+
+				]
+			},
+			{
+				"id": 21040,
+				"name": "基本信息[查询]",
+				"parentId": 21035,
+				"pId": null,
+				"menuLevel": 2,
+				"url": "/customerService/view",
+				"pageType": 101,
+				"uuidName": "player_base_info_query",
+				"checked": false,
+				"nodes": [
+
+				]
+			}
+		]
+	}
+]

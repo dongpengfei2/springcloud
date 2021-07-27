@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dpf.springcloud.mapper.AuthMenuMapper">
+    <select id="findList" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        table_name as 'tableName',
+        create_uerid as 'createUerId',order_num as 'orderNum',
+        menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where menu_status=0
+        <if test="authMenu.menuName != null and authMenu.menuName != ''">
+            and menu_name LIKE  CONCAT(CONCAT('%', #{authMenu.menuName}), '%')
+        </if>
+        <if test="authMenu.menuLevel != null">
+            and menu_level=#{authMenu.menuLevel}
+        </if>
+        <if test="authMenu.parentId != null">
+            and parent_id=#{authMenu.parentId}
+        </if>
+        order by order_num asc
+    </select>
+
+    <select id="findAllByParentId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        table_name as 'tableName',
+        create_uerid as 'createUerId',order_num as 'orderNum',
+        menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where parent_id=#{parentId}
+    </select>
+
+    <select id="findListByParId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select uu.id,
+        uu.menu_name as 'menuName',
+        uu.menu_level as 'menuLevel',
+        uu.menu_description as 'menuDescription',
+        uu.parent_id as 'parentId',
+        uu.in_unique_key as 'inUniqueKey',
+        uu.condition_type_third as 'conditionTypeThird',
+        uu.data_dictionary_type as 'dataDictionaryType',
+        cc.category_type as 'categoryType',
+        cc.category_name as 'categoryName',
+        cc.category_order as 'categoryOrder',
+        uu.sql_name as 'sqlName',
+        uu.table_name as 'tableName',
+        uu.is_tabled as 'isTabled',
+        uu.table_headline as 'tableHeadline',
+        uu.menu_status as 'menuStatus',
+        uu.create_time as 'createTime',
+        uu.page_type as 'pageType',
+        uu.create_uerid as 'createUerId',uu.order_num as 'orderNum',menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu uu LEFT JOIN  gm_data_category cc on uu.data_dictionary_type = cc.id
+        <if test="userId != null and productId != null">
+            RIGHT JOIN
+            (select DISTINCT menu_id from gm_role_menu uu,gm_user_product up where up.user_id=#{userId} and
+            up.product_id=#{productId} and up.role_id = uu.role_id) obj on obj.menu_id = uu.id
+        </if>
+        where uu.menu_status=0
+        and uu.parent_id=#{parId} and uu.condition_type_third in(2,3,4) order by uu.condition_type_third desc
+    </select>
+
+    <select id="findThirdListByParId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select uu.id,
+        uu.menu_name as 'menuName',
+        uu.menu_level as 'menuLevel',
+        uu.menu_description as 'menuDescription',
+        uu.parent_id as 'parentId',
+        uu.in_unique_key as 'inUniqueKey',
+        uu.condition_type_third as 'conditionTypeThird',
+        uu.data_dictionary_type as 'dataDictionaryType',
+        cc.category_name as 'categoryName',
+        uu.sql_name as 'sqlName',
+        uu.table_name as 'tableName',
+        uu.is_tabled as 'isTabled',
+        uu.table_headline as 'tableHeadline',
+        uu.menu_status as 'menuStatus',
+        uu.create_time as 'createTime',
+        uu.page_type as 'pageType',
+        uu.create_uerid as 'createUerId',uu.order_num as 'orderNum',menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu uu LEFT JOIN  gm_data_category cc on uu.data_dictionary_type = cc.id
+        <if test="userId != null and productId != null">
+            RIGHT JOIN
+            (select DISTINCT menu_id from gm_role_menu uu,gm_user_product up where up.user_id=#{userId} and
+            up.product_id = #{productId} and up.role_id = uu.role_id) obj on obj.menu_id = uu.id
+        </if>
+        where uu.menu_status=0
+        and uu.parent_id=#{parId} and uu.condition_type_third in(2,3) order by uu.condition_type_third desc
+    </select>
+
+    <select id="getGroupByIdByParId" resultType="java.lang.Integer">
+        select id from gm_auth_menu where parent_id=#{parentId} and sql_name='groupby'
+    </select>
+
+    <select id="findModifyList" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select gam.id,
+        gam.menu_name as 'menuName',
+        gam.menu_level as 'menuLevel',
+        gam.menu_description as 'menuDescription',
+        gam.parent_id as 'parentId',
+        gam.in_unique_key as 'inUniqueKey',
+        gam.condition_type_third as 'conditionTypeThird',
+        gam.data_dictionary_type as 'dataDictionaryType',
+        gam.sql_name as 'sqlName',
+        gam.is_tabled as 'isTabled',
+        gam.table_name as 'tableName',
+        gam.table_headline as 'tableHeadline',
+        gam.menu_status as 'menuStatus',
+        gam.create_time as 'createTime',
+        gam.page_type as 'pageType',
+        gam.create_uerid as 'createUerId',
+        gam.menu_url as 'menuUrl',
+        gam.is_paged as 'isPaged',
+        gam.y_axis_name as 'yAxisName',
+        gam.x_axis_name as 'xAxisName',
+        gam.function_column as 'functionColumn',
+        gam.view_function_column as 'viewFunctionColumn',
+        gam.view_function_column_row as 'viewFunctionColumnRow',
+        gam.funnel_order_filed as 'funnelOrderFiled',
+        gam.funnel_order_role as 'funnelOrderRole',
+        gam.datasource,
+        gam.group_default_value as 'groupDefaultValue',
+        gam.filedwidth,
+        gam.innerfunction,
+        gam.filedtype,
+        gam.groupby_category as 'groupbyCategory',
+        gam.groupby_default_value as 'groupbyDefaultValue',
+        gam.datetype,
+        gam.whickday,
+        gam.search_type_value as 'searchTypeValue',
+        gam.replace_value as 'replaceValue'
+        from gm_auth_menu gam
+        left join gm_customer_model gcm on gcm.menu_id = gam.id
+        left join gm_customer_model_relation gcmr on gcmr.template_id = gcm.id
+        where gam.menu_status=0 and gam.menu_level in(1,2) and (gcmr.parent_id = 0 or gcmr.parent_id is null)
+        order by gam.order_num ASC
+    </select>
+
+    <select id="findFixedList" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_name as 'tableName',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where menu_status=0 and menu_level =0 order by id ASC
+    </select>
+
+
+    <select id="allMenus" resultType="com.dpf.springcloud.bean.JsTreeNode">
+          select id,parent_id pId,menu_name name,menu_url as 'menuUrl' from gm_auth_menu where menu_status=0
+    </select>
+    <select id="allMenusJSON" resultType="com.alibaba.fastjson.JSONObject">
+        select mm.id,mm.parent_id pId,mm.menu_name name,(case when count(dd.id)>0 then true else false end) as isParent
+        from gm_auth_menu mm
+        left join gm_data_dictionary dd on dd.category_id=mm.data_dictionary_type
+        where menu_status=0
+        and menu_level in (-1,0,1,2,3)
+        group by mm.id,pId,name
+    </select>
+
+    <select id="allDataReportMenus" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+            mm.id AS id,
+            mm.parent_id AS pId,
+            mm.menu_name AS name
+        FROM
+            gm_auth_menu mm,
+            gm_role_menu uu,
+            gm_user_product up
+        WHERE
+            up.user_id = #{userId}
+            AND up.product_id = #{productId}
+            AND up.role_id = uu.role_id
+            AND mm.id = uu.menu_id
+            AND mm.menu_status = 0
+            AND mm.menu_level NOT IN (-1, 3)
+            AND mm.page_type NOT IN (5, 6, 7, 101, 102)
+        GROUP BY
+            id,
+            pId,
+            name
+        ORDER BY
+            mm.order_num
+    </select>
+
+    <select id="menusByRoleId" resultType="java.lang.Integer">
+        select menu_id from gm_role_menu where role_id=#{roleId}
+    </select>
+    <select id="dataMenusByRoleId" resultType="java.util.Map">
+        select menu_id menuId,data_id dataId from gm_role_menu_data where role_id=#{roleId}
+    </select>
+    <select id="allDataMenus" resultType="com.dpf.springcloud.bean.JsTreeNode">
+        select 	obj.*,(case when da.id is not null then true else false end) checked
+        from
+        (select dd.id,mm.id pId,dd.data_value name,mm.id menuId  from gm_data_category cc,gm_auth_menu mm,gm_data_dictionary dd
+            where mm.data_dictionary_type = cc.id
+            and dd.category_id=cc.id
+            and dd.data_status=0 and cc.category_status=0 and mm.menu_status=0) obj
+        left join gm_role_menu_data da on da.menu_id = obj.menuId and da.data_id = obj.id and da.role_id = #{roleId}
+    </select>
+
+    <select id="roleMenusChildsObjects" resultType="com.alibaba.fastjson.JSONObject">
+        select 	obj.id,obj.pId,obj.name,(case when da.id is not null then true else false end) checked
+        from (
+            select dd.id,mm.id pId,dd.data_value name
+            from gm_data_category cc,gm_auth_menu mm,gm_data_dictionary dd
+            where mm.data_dictionary_type = cc.id
+            and dd.category_id=cc.id
+            and dd.data_status=0 and cc.category_status=0 and mm.menu_status=0 and mm.id=#{pId}
+        ) obj
+        left join gm_role_menu_data da on da.menu_id = obj.pId and da.data_id = obj.id and da.role_id = #{roleId}
+    </select>
+
+
+    <select id="selectById" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',
+        table_name as 'tableName',
+        menu_url as 'menuUrl',
+        is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',
+        x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',
+        view_function_column as 'viewFunctionColumn',
+        view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',
+        funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',
+        filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',
+        groupby_default_value as 'groupbyDefaultValue',
+        datetype,whickday,
+        search_type_value as 'searchTypeValue',
+        replace_value as 'replaceValue',
+        order_num as 'orderNum'
+        from gm_auth_menu where  id=#{id}
+    </select>
+
+    <insert id="save">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into gm_auth_menu (replace_value,search_type_value,whickday,datetype,groupby_default_value,groupby_category,filedtype,innerfunction,filedwidth,group_default_value,datasource,view_function_column_row,view_function_column,function_column,y_axis_name,x_axis_name,table_name,menu_name,menu_level,menu_description,parent_id,in_unique_key,condition_type_third,data_dictionary_type,sql_name,is_tabled,table_headline,menu_status,create_time,create_uerid,order_num,page_type,menu_url,is_paged,funnel_order_filed,funnel_order_role)
+        VALUES (#{replaceValue},#{searchTypeValue},#{whickday},#{datetype},#{groupbyDefaultValue},#{groupbyCategory},#{filedtype},#{innerfunction},#{filedwidth},#{groupDefaultValue},#{datasource},#{viewFunctionColumnRow},#{viewFunctionColumn},#{functionColumn},#{yAxisName},#{xAxisName},#{tableName},#{menuName},#{menuLevel},#{menuDescription},#{parentId},#{inUniqueKey},#{conditionTypeThird},#{dataDictionaryType},#{sqlName},#{isTabled},#{tableHeadline},#{menuStatus},#{createTime},#{createUerId},#{orderNum},#{pageType},#{menuUrl},#{isPaged},#{funnelOrderFiled},#{funnelOrderRole});
+    </insert>
+    <insert id="saveForUpdate">
+        insert into gm_auth_menu (id,replace_value,search_type_value,whickday,datetype,groupby_default_value,groupby_category,filedtype,innerfunction,filedwidth,group_default_value,datasource,view_function_column_row,view_function_column,function_column,y_axis_name,x_axis_name,table_name,menu_name,menu_level,menu_description,parent_id,in_unique_key,condition_type_third,data_dictionary_type,sql_name,is_tabled,table_headline,menu_status,create_time,create_uerid,order_num,page_type,menu_url,is_paged,funnel_order_filed,funnel_order_role)
+        VALUES (#{id},#{replaceValue},#{searchTypeValue},#{whickday},#{datetype},#{groupbyDefaultValue},#{groupbyCategory},#{filedtype},#{innerfunction},#{filedwidth},#{groupDefaultValue},#{datasource},#{viewFunctionColumnRow},#{viewFunctionColumn},#{functionColumn},#{yAxisName},#{xAxisName},#{tableName},#{menuName},#{menuLevel},#{menuDescription},#{parentId},#{inUniqueKey},#{conditionTypeThird},#{dataDictionaryType},#{sqlName},#{isTabled},#{tableHeadline},#{menuStatus},#{createTime},#{createUerId},#{orderNum},#{pageType},#{menuUrl},#{isPaged},#{funnelOrderFiled},#{funnelOrderRole});
+    </insert>
+    <update id="update">
+        update gm_auth_menu
+        <trim prefix="set" suffixOverrides=",">
+            <if test="menuName != null">
+                menu_name=#{menuName},
+            </if>
+            <if test="menuDescription != null">
+                menu_description=#{menuDescription},
+            </if>
+            <if test="groupbyDefaultValue != null">
+                groupby_default_value=#{groupbyDefaultValue},
+            </if>
+            <if test="replaceValue != null">
+                replace_value=#{replaceValue},
+            </if>
+            <if test="groupbyCategory != null">
+                groupby_category=#{groupbyCategory},
+            </if>
+            <if test="searchTypeValue != null">
+                search_type_value=#{searchTypeValue},
+            </if>
+            <if test="menuLevel != null">
+                menu_level=#{menuLevel},
+            </if>
+            <if test="pageType != null">
+                page_type=#{pageType},
+            </if>
+            <if test="orderNum != null">
+                order_num=#{orderNum},
+            </if>
+            <if test="whickday != null">
+                whickday=#{whickday},
+            </if>
+            <if test="datetype != null">
+                datetype=#{datetype},
+            </if>
+            <if test="parentId != null">
+                parent_id=#{parentId},
+            </if>
+            <if test="inUniqueKey != null">
+                in_unique_key=#{inUniqueKey},
+            </if>
+            <if test="functionColumn != null">
+                function_column=#{functionColumn},
+            </if>
+            <if test="viewFunctionColumn != null">
+                view_function_column=#{viewFunctionColumn},
+            </if>
+            <if test="viewFunctionColumnRow != null">
+                view_function_column_row=#{viewFunctionColumnRow},
+            </if>
+            <if test="conditionTypeThird != null">
+                condition_type_third=#{conditionTypeThird},
+            </if>
+            <if test="dataDictionaryType != null">
+                data_dictionary_type=#{dataDictionaryType},
+            </if>
+            <if test="tableName != null">
+                table_name=#{tableName},
+            </if>
+            <if test="sqlName != null">
+                sql_name=#{sqlName},
+            </if>
+            <if test="menuUrl != null">
+                menu_url=#{menuUrl},
+            </if>
+            <if test="yAxisName != null">
+                y_axis_name=#{yAxisName},
+            </if>
+            <if test="innerfunction != null">
+                innerfunction=#{innerfunction},
+            </if>
+            <if test="xAxisName != null">
+                x_axis_name=#{xAxisName},
+            </if>
+            <if test="groupDefaultValue != null">
+                group_default_value=#{groupDefaultValue},
+            </if>
+            <if test="isTabled != null">
+                is_tabled=#{isTabled},
+            </if>
+            <if test="tableHeadline != null">
+                table_headline=#{tableHeadline},
+            </if>
+            <if test="datasource != null">
+                datasource=#{datasource},
+            </if>
+            <if test="menuStatus != null">
+                menu_status=#{menuStatus},
+            </if>
+            <if test="createTime != null">
+                create_time=#{createTime},
+            </if>
+            <if test="filedtype != null">
+                filedtype=#{filedtype},
+            </if>
+            <if test="createUerId != null">
+                create_uerid=#{createUerId},
+            </if>
+            <if test="isPaged != null">
+                is_paged=#{isPaged},
+            </if>
+            <if test="funnelOrderFiled != null">
+                funnel_order_filed=#{funnelOrderFiled},
+            </if>
+            <if test="funnelOrderRole != null">
+                funnel_order_role=#{funnelOrderRole},
+            </if>
+            <if test="filedwidth != null">
+                filedwidth=#{filedwidth},
+            </if>
+        </trim>
+        where id=#{id}
+    </update>
+
+    <select id="checkName" resultType="java.lang.Integer">
+        select count(*) from gm_auth_menu where menu_name=#{menuName} and menu_status=0
+    </select>
+
+    <select id="checkUnKey" resultType="java.lang.Integer">
+        select count(*) from gm_auth_menu where in_unique_key=#{inUniqueKey} and menu_status=0
+    </select>
+
+    <select id="customSql" resultType="java.util.Map"  parameterType="String" statementType="STATEMENT">
+          ${customSql}
+    </select>
+
+    <select id="customSqlPage" resultType="java.util.Map"  parameterType="String">
+        ${parMap.customSql}
+    </select>
+
+    <insert id="saveRoleMenu">
+        insert into gm_role_menu (role_id,menu_id)
+        VALUES (#{roleId},#{menuId});
+    </insert>
+    <insert id="saveRoleMenuData">
+        insert into gm_role_menu_data (role_id,menu_id,data_id)
+        VALUES (#{roleId},#{menuId},#{dataId});
+    </insert>
+
+    <delete id="deleteRoleMenuByRoleId">
+        delete from gm_role_menu where role_id=#{roleId}
+    </delete>
+
+    <delete id="deleteRoleMenuDataByRoleId">
+        delete from gm_role_menu_data where role_id=#{roleId}
+    </delete>
+
+    <select id="getUserMenus" resultType="java.lang.Integer">
+        select DISTINCT menu_id from gm_role_menu uu, gm_user_product up where up.user_id = #{userId} and
+        up.product_id = #{productId} and up.role_id = uu.role_id
+    </select>
+
+    <select id="getUserUrlMenus" resultType="java.lang.String">
+        select aa.menu_url from gm_user_product up, gm_role_menu uu, gm_auth_menu aa where
+        up.user_id = #{userId} and up.product_id = #{productId} and up.role_id = uu.role_id and aa.id = uu.menu_id
+    </select>
+
+    <select id="geySqlBymenuId" resultType="java.lang.String">
+        select custom_sql from gm_menu_sql where menu_id = #{id}
+    </select>
+    <delete id="deleteThirdMeunByParId">
+        delete from gm_auth_menu where parent_id =#{pId}
+    </delete>
+    <delete id="deletTablesByMenuId">
+        delete from gm_view_table where menu_id =#{id}
+    </delete>
+    <delete id="deletMenuSqlByMenuId">
+        delete from gm_menu_sql where menu_id =#{id}
+    </delete>
+
+    <delete id="deletViewMenuSqlByMenuId">
+        delete from gm_menu_sql_view where menu_id =#{id}
+    </delete>
+
+    <select id="getViewMenuSqlByMenuId" resultType="java.lang.String">
+          select custom_sql from gm_menu_sql_view where menu_id =#{id}
+    </select>
+
+    <select id="getLastKey" resultType="java.lang.Integer">
+        SELECT
+            AUTO_INCREMENT
+        FROM
+            INFORMATION_SCHEMA.TABLES
+        WHERE
+            TABLE_NAME = 'gm_auth_menu'
+    </select>
+
+    <select id="findSystemList" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_name as 'tableName',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where menu_status=0 and menu_level =-1 order by order_num ASC
+    </select>
+
+    <select id="getGroupByFeild" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_name as 'tableName',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+         from gm_auth_menu where group_default_value is not null and group_default_value!='' and menu_status = 0 and parent_id = #{id}
+    </select>
+
+    <select id="getSearchFileds" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select mm.id,
+        mm.menu_name as 'menuName',
+        mm.menu_level as 'menuLevel',
+        mm.menu_description as 'menuDescription',
+        mm.parent_id as 'parentId',
+        mm.in_unique_key as 'inUniqueKey',
+        mm.condition_type_third as 'conditionTypeThird',
+        mm.data_dictionary_type as 'dataDictionaryType',
+        mm.sql_name as 'sqlName',
+        mm.is_tabled as 'isTabled',
+        mm.table_name as 'tableName',
+        mm.table_headline as 'tableHeadline',
+        mm.menu_status as 'menuStatus',
+        mm.create_time as 'createTime',
+        mm.page_type as 'pageType',
+        mm.create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        mm.function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        mm.funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        mm.datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        mm.groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue',
+        dc.category_type as 'categoryType'
+        from gm_auth_menu mm left join gm_data_category dc on mm.data_dictionary_type = dc.id where mm.parent_id = #{id} and mm.menu_status = 0
+    </select>
+
+    <select id="countForData" resultType="java.lang.String">
+        select distinct dd.data_value from gm_auth_menu gg,gm_data_category cc, gm_data_dictionary dd where gg.parent_id= #{id}
+        and gg.data_dictionary_type = cc.id and dd.category_id = cc.id and gg.sql_name=#{sqlName}
+    </select>
+
+    <select id="countForUserData" resultType="java.lang.String">
+        select distinct yy.data_value  from gm_role_menu_data dd,gm_user_product up,gm_auth_menu gg,gm_data_dictionary yy
+        where dd.role_id = up.role_id and gg.id = dd.menu_id and gg.parent_id= #{id} and gg.sql_name=#{sqlName}
+        and up.user_id=#{userId} and up.product_id = #{productId} and dd.data_id = yy.id
+    </select>
+
+    <select id="findGroupByParId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_name as 'tableName',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where parent_id = #{id} and menu_status = 1
+        <if test="sqlName != null  and sqlName != '' ">
+           and sql_name=#{sqlName}
+        </if>
+         order by menu_name, sql_name
+    </select>
+
+    <select id="findSecounPageList" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_name as 'tableName',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where menu_status=0 and menu_level =#{level} order by id ASC
+    </select>
+
+    <insert id ="saveChilds" parameterType="java.util.List" >
+        <selectKey resultType ="java.lang.Integer" keyProperty= "id"
+                   order= "AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey >
+        insert into gm_auth_menu (replace_value,search_type_value,whickday,datetype,groupby_default_value,groupby_category,filedtype,innerfunction,
+        filedwidth,group_default_value,datasource,view_function_column_row,view_function_column,function_column,
+        y_axis_name,x_axis_name,table_name,menu_name,menu_level,menu_description,parent_id,in_unique_key,condition_type_third,
+        data_dictionary_type,sql_name,is_tabled,table_headline,menu_status,create_time,create_uerid,
+        order_num,page_type,menu_url,is_paged,funnel_order_filed,funnel_order_role)
+        VALUES
+        <foreach collection ="authMenus" item="authMenu" index= "index" separator =",">
+            (#{authMenu.replaceValue},#{authMenu.searchTypeValue},#{authMenu.whickday},#{authMenu.datetype},#{authMenu.groupbyDefaultValue},#{authMenu.groupbyCategory},#{authMenu.filedtype},#{authMenu.innerfunction},
+            #{authMenu.filedwidth},#{authMenu.groupDefaultValue},#{authMenu.datasource},#{authMenu.viewFunctionColumnRow},#{authMenu.viewFunctionColumn},#{authMenu.functionColumn},
+            #{authMenu.yAxisName},#{authMenu.xAxisName},#{authMenu.tableName},#{authMenu.menuName},#{authMenu.menuLevel},#{authMenus.menuDescription},#{parentId},#{authMenu.inUniqueKey},#{authMenu.conditionTypeThird},
+            #{authMenu.dataDictionaryType},#{authMenu.sqlName},#{authMenu.isTabled},#{authMenu.tableHeadline},#{authMenu.menuStatus},#{authMenu.createTime},#{authMenu.createUerId}
+            ,#{authMenu.orderNum},#{authMenu.pageType},#{authMenu.menuUrl},#{authMenu.isPaged},#{authMenu.funnelOrderFiled},#{authMenu.funnelOrderRole})
+        </foreach >
+    </insert>
+    
+    <select id="groupbyCharts" resultType="java.util.Map">
+        select * from gm_groupby_chart
+    </select>
+
+    <delete id="deleteRoleMenu">
+        delete from gm_role_menu where role_id=#{roleId}
+        and menu_id in
+        <foreach collection="cleanMenuArr" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+    <delete id="deleteRoleMenuData">
+        delete from gm_role_menu_data where role_id=#{roleId} and menu_id=#{pId} and data_id=#{id};
+    </delete>
+    <delete id="deleteRoleMenuDataByPids">
+        delete from gm_role_menu_data where role_id=#{roleId}
+        and menu_id in
+        <foreach collection="levelThreePidsDel" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+    <insert id="saveMenuRoles">
+        insert into gm_role_menu (role_id,menu_id)
+        VALUES
+        <foreach collection="addMenuArr" item="item" separator=",">
+            (#{roleId},#{item.id})
+        </foreach>
+    </insert>
+    <insert id="saveMenuRolesData">
+        insert into gm_role_menu_data (role_id,menu_id,data_id)
+        VALUES
+        <foreach collection="addDataArr" item="item" separator=",">
+            (#{roleId},#{item.pId},#{item.id})
+        </foreach>
+    </insert>
+    <insert id="saveMenuRolesDataByPids">
+        insert into gm_role_menu_data(role_id,menu_id,data_id)
+        select #{roleId} as role_id,mm.id as menu_id,dd.id as data_id from gm_auth_menu mm
+        left join gm_data_dictionary dd on dd.category_id = mm.data_dictionary_type
+        where mm.id in
+        <foreach collection="levelThreePidsAdd" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </insert>
+
+    <delete id="deleteMenuRolesDataByPids">
+        delete from gm_role_menu_data where role_id = #{roleId} and menu_id = #{levelThreePids}
+    </delete>
+
+
+    <delete id="batchDeleteByModelIds"  parameterType="java.lang.Integer">
+        delete m
+        from gm_auth_menu m
+        inner join gm_customer_model cm on cm.menu_id = m.id
+        where cm.id in
+        <foreach collection="modelIds" separator="," item="id" open="(" close=")">
+            #{id,jdbcType=INTEGER}
+        </foreach>
+    </delete>
+
+    <select id="findMultiGroupByParId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select id,
+        menu_name as 'menuName',
+        menu_level as 'menuLevel',
+        menu_description as 'menuDescription',
+        parent_id as 'parentId',
+        in_unique_key as 'inUniqueKey',
+        condition_type_third as 'conditionTypeThird',
+        data_dictionary_type as 'dataDictionaryType',
+        sql_name as 'sqlName',
+        is_tabled as 'isTabled',
+        table_name as 'tableName',
+        table_headline as 'tableHeadline',
+        menu_status as 'menuStatus',
+        create_time as 'createTime',
+        page_type as 'pageType',
+        create_uerid as 'createUerId',menu_url as 'menuUrl',is_paged as 'isPaged',y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value AS 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu where parent_id = #{id} and menu_status = 1
+        <if test="sqlName != null  and sqlName != '' ">
+            and sql_name in
+            <foreach collection="sqlName.split(',')" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        order by menu_name
+    </select>
+
+    <update id="updateChildMenuStatus">
+        update gm_auth_menu
+        <trim prefix="set" suffixOverrides=",">
+            <if test="menuStatus != null">
+                menu_status = #{menuStatus}
+            </if>
+        </trim>
+        where parent_id = #{menuId}
+    </update>
+
+    <select id="findFormIFrameMenuListByParId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select uu.id,
+        uu.menu_name as 'menuName',
+        uu.menu_level as 'menuLevel',
+        uu.menu_description as 'menuDescription',
+        uu.parent_id as 'parentId',
+        uu.in_unique_key as 'inUniqueKey',
+        uu.condition_type_third as 'conditionTypeThird',
+        uu.data_dictionary_type as 'dataDictionaryType',
+        cc.category_type as 'categoryType',
+        cc.category_name as 'categoryName',
+        uu.sql_name as 'sqlName',
+        uu.table_name as 'tableName',
+        uu.is_tabled as 'isTabled',
+        uu.table_headline as 'tableHeadline',
+        uu.menu_status as 'menuStatus',
+        uu.create_time as 'createTime',
+        uu.page_type as 'pageType',
+        uu.create_uerid as 'createUerId',uu.order_num as 'orderNum',menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu uu LEFT JOIN  gm_data_category cc on uu.data_dictionary_type = cc.id
+        where uu.menu_status = 0
+        and uu.parent_id = #{parentId} and uu.condition_type_third in(2,5)
+        <if test="isOrder == true">
+            order by uu.order_num
+        </if>
+        <if test="isOrder == false">
+            order by uu.create_time
+        </if>
+    </select>
+
+    <delete id="deleteMenu">
+        DELETE FROM gm_auth_menu where id = #{menuId}
+    </delete>
+
+    <select id="findCustomerServiceTemplateByParId" resultType="com.dpf.springcloud.bean.AuthMenu">
+        select uu.id,
+        uu.menu_name as 'menuName',
+        uu.menu_level as 'menuLevel',
+        uu.menu_description as 'menuDescription',
+        uu.parent_id as 'parentId',
+        uu.in_unique_key as 'inUniqueKey',
+        uu.condition_type_third as 'conditionTypeThird',
+        uu.data_dictionary_type as 'dataDictionaryType',
+        cc.category_type as 'categoryType',
+        cc.category_name as 'categoryName',
+        uu.sql_name as 'sqlName',
+        uu.table_name as 'tableName',
+        uu.is_tabled as 'isTabled',
+        uu.table_headline as 'tableHeadline',
+        uu.menu_status as 'menuStatus',
+        uu.create_time as 'createTime',
+        uu.page_type as 'pageType',
+        uu.create_uerid as 'createUerId',uu.order_num as 'orderNum',menu_url as 'menuUrl',is_paged as 'isPaged',
+        y_axis_name as 'yAxisName',x_axis_name as 'xAxisName',
+        function_column as 'functionColumn',view_function_column as 'viewFunctionColumn',view_function_column_row as 'viewFunctionColumnRow',
+        funnel_order_filed as 'funnelOrderFiled',funnel_order_role as 'funnelOrderRole',
+        datasource,group_default_value as 'groupDefaultValue',filedwidth,innerfunction,filedtype,
+        groupby_category as 'groupbyCategory',groupby_default_value as 'groupbyDefaultValue',datetype,whickday,search_type_value as 'searchTypeValue',replace_value as 'replaceValue'
+        from gm_auth_menu uu LEFT JOIN  gm_data_category cc on uu.data_dictionary_type = cc.id
+        where uu.menu_status = 0
+        and uu.parent_id = #{parentMenuId} and uu.page_type = 101 and uu.menu_level = 2
+        order by uu.create_time desc
+    </select>
+</mapper>
